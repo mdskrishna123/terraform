@@ -20,6 +20,8 @@
 # resource "aws_instance" "web-1"{
 #     ami = "ami-022d03f649d12a49d" #AMI ID will be different every region, this is OS
 #     instance_type = var.is_test ? "t3.micro" : "t3.large"
+#     Method-2
+#     instance_type = var.environment == "DEV" ? "t3.micro" : "t3.large"
 # }
 
 # resource "aws_instance" "server"{
