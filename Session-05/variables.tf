@@ -4,9 +4,15 @@ variable "instances" {  # Naming instances
 }
 
 # if env is test I want to create t3.micro, otherwise I want to create t3.large
+# Method-1
 variable "is_test" {
   type = bool
   default  = false
+}
+# Method-2 
+variable "environment" {
+  type = string
+  default = "DEV"
 }
 
 # web-server should be t3.micro, app-server should be t3.medium, db-server should be t3.large
@@ -24,8 +30,5 @@ variable "instance_name" {
   default = "web-server"
 }
 
-variable "environment" {
-  type = string
-  default = "DEV"
-}
+
 # instance name should be web-server-DEV
